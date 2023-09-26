@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>rock paper scissors</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="
+
+        playgame('rock')
+
+        ">Rock</button>
+
+    <button onclick="
+
+    playgame('paper')">Paper</button>
+
+    <button onclick="
+    
+    playgame('scissors');
+    
+    ">Scissors</button>
+
+    <button onclick="
+    score.win=0;
+    score.loss=0;
+    score.tai=0;
+    ">Reset result</button>
+    <script>
+
+let score = JSON.parse(localStorage.getItem('score')) || {
+    win:0,
+        loss:0,
+        tai:0
+};
+/* onther way to cheack the object is empty or not
+
+if(score === null){
+    score={
+        win:0,
+        loss:0,
+        tai:0
+    }
+
+}*/
+
+
+
+
+
+        function computer() {
+            const compterchoice = Math.random();
+            let computermove = '';
+            if (compterchoice >= 0 && compterchoice < 1 / 3) {
+                computermove = 'rock';
+            } else if (compterchoice >= 1 / 3 && compterchoice < 2 / 3) {
+                computermove = 'paper';
+            } else if (compterchoice >= 2 / 3 && compterchoice < 1) {
+                computermove = 'scissors';
+            }
+            return computermove;
+
+        }
+        
+        function playgame(move) {
+
+
+            let computermove = computer();
+            let result = '';
+            if (move === 'rock') {
+
+                if (computermove === 'rock') {
+                    result = 'tai';
+                } else if (computermove === 'paper') {
+                    result = 'you loss';
+                } else if (computermove === 'scissors') {
+                    result = 'you win';
+                }
+            }
+            else if (move === 'paper') {
+
+
+                if (computermove === 'rock') {
+                    result = 'you win';
+                } else if (computermove === 'paper') {
+                    result = 'tai';
+                } else if (computermove === 'scissors') {
+                    result = 'you loss';
+                }
+            } else if (move === 'scissors') {
+
+
+                if (computermove === 'rock') {
+                    result = 'you loss';
+                } else if (computermove === 'paper') {
+                    result = 'you win';
+                } else if (computermove === 'scissors') {
+                    result = 'tai';
+                }
+
+
+            }
+
+            if (result === 'you win') {
+                score.win += 1;
+            }
+            else if (result === "you loss") {
+                score.loss += 1;
+            }
+            else if (result === 'tai') {
+                score.tai += 1;
+            }
+          
+       localStorage.setItem('score', JSON.stringify(score));
+
+            alert(`you choose ${move} thats why ${result} and your tottal result
+            :win=${score.win},loss=${score.loss},tai=${score.tai}`);
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

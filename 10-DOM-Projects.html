@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .js-subscribe {
+            border: none;
+            color: white;
+            background-color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .is-subscribed {
+            border: none;
+            color: black;
+            background-color: rgb(240, 240, 240);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .js-inputcost{
+            padding: 12px;
+
+        }
+        .js-calculate{
+            padding:12px 15px;
+            border: none;
+            background-color: green;
+            font-weight: bold;
+        }
+
+    </style>
+    <title>10 DOM projects</title>
+</head>
+
+<body>
+    <h1>10-DOM Projects </h1>
+
+    <p> Subscribe button</p>
+
+    <button onclick="change();" class="js-subscribe">Subscribe</button>
+
+    <p> Amazon Shipping Calculator</p>
+
+    <input placeholder="COST" Class="js-inputcost" onkeydown="calculater1(event)">
+
+    <button onclick="calculater();" class="js-calculate">Calculate</button>
+
+    <p class="js-totalcost">total cost is</p>
+
+
+    <script>
+        function change() {
+            let check = document.querySelector('.js-subscribe');
+            if (check.innerText === 'Subscribe') {
+                check.innerHTML = 'Subscribed';
+                check.classList.add('is-subscribed');
+
+            }
+            else {
+                document.querySelector('.js-subscribe').innerHTML = 'Subscribe';
+                check.classList.remove('is-subscribed')
+            }
+
+        }
+        //==============amazon shipping calculator
+        function calculater() {
+            let inputvalue = document.querySelector('.js-inputcost');
+
+            let inputcost = Number(inputvalue.value);
+            if (inputcost <= 40) {
+                inputcost = inputcost + 10;
+
+            }
+            document.querySelector('.js-totalcost').innerHTML = `total cost is $${inputcost}`;
+
+        }
+        function calculater1(event) {
+            if (event.key ==='Enter') {
+                let inputvalue = document.querySelector('.js-inputcost');
+
+                let inputcost = Number(inputvalue.value);
+                if (inputcost <= 40) {
+                    inputcost = inputcost + 10;
+
+                }
+                document.querySelector('.js-totalcost').innerHTML = `total cost is $${inputcost}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

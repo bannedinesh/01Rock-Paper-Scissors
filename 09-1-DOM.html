@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> projects 01 DOM</title>
+</head>
+
+<body>
+    <button onclick="getvalue1();" class="js-heads">Heads</button>
+
+
+    <button onclick="getvalue2();" class="js-tails">Tails</button>
+
+    <p class="js-value">value</p>
+
+    <script>
+        let headsvalue = document.querySelector('.js-heads').innerHTML;
+        let tailsvalue = document.querySelector('.js-tails').innerHTML;
+
+        function getvalue1() {
+
+            if (headsvalue === 'Heads') {
+                document.querySelector('.js-value').innerHTML = 'You chooes Heads';
+
+            }
+        }
+        function getvalue2() {
+
+            if (tailsvalue === 'Tails') {
+                document.querySelector('.js-value').innerHTML = 'You chooes Tails';
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

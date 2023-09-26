@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>DOM Concept</title>
+</head>
+<body>
+
+    <button>DOM</button>
+    <button class="js-button">sam button</button>
+    <script>
+        //to get title name or to chane title
+        console.log(document.title);
+ const name=document.title='raju';
+ console.log(name);
+// to get html body or html inside body
+console.log(document.body);
+
+console.log(document.body.innerHTML)
+
+
+//selsecting perticuler html code to mogify by queryselector.
+const element=document.querySelector('button');
+
+console.log(element);
+
+const element2=document.querySelector('button').innerHTML;
+console.log(element2);
+
+const element3=document.querySelector('button').innerHTML='ram';
+console.log(element3);
+
+const  element4=document.querySelector('.js-button');
+console.log(element4);
+const  element5=document.querySelector('.js-button').innerHTML;
+console.log(element5);
+
+
+
+
+    </script>
+</body>
+</html>

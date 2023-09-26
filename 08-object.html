@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Objects</title>
+</head>
+<body>
+    <script>
+//==ading variable to objects==
+const list={
+    name:'shoes',
+    boll:4,
+    colour:'red'
+
+}
+console.log(list);
+console.log(list.name);
+console.log(list.boll);
+console.log(list.colour);
+
+list.bat=true;
+list.bat='big';
+console.log(list);
+//=====We can and objets within objects
+//==example#1
+const list2 = {
+    name:'ram',
+    age:25,
+    surname:'tamma',
+    'father':"koli",
+
+    child: {
+        raju:7,
+        ramu:3
+    }
+}
+console.log(list2);
+console.log(list2.child.ramu);
+console.log(list2.child);
+//adding function to object======
+const addfun={
+    fun:function function1(){
+        console.log('its function within');
+        }
+    }
+addfun.fun();
+ 
+//Using JSON to store date and transfering to other compter//
+ 
+const list3={
+    name:'danny',
+    age:23,
+    surname:'banne'
+}
+//convertng to String to store.
+console.log(JSON.stringify(list3));
+
+//converting back to data for js.
+console.log(JSON.parse(JSON.stringify(list3)));
+
+//more shortcuts and methods 
+
+const object1={
+    messege:'hello',
+    prise:23
+}
+console.log(object1);
+
+
+const object2=object1;
+console.log(object2);
+object2.messege='ram';
+console.log(object2);
+console.log(object1);
+
+const object3={messege:'hello',
+    prise:23
+}
+console.log(object3===object1);
+console.log(object1===object2);
+
+//form this we can say that object are comparing by there referance.
+
+const messege=object1.messege;
+console.log(messege);
+const {prise}=object1;
+console.log(prise);
+
+
+// the new properties to creat function within a object.
+
+const object4={
+    method: function f1(){
+        console.log('its a function');
+    },
+    method2(){
+        console.log('its function withaout function name');
+    }
+}
+ object4.method();
+object4.method2();
+
+    </script>
+</body>
+</html>

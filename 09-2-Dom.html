@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Dom Project 2</title>
+</head>
+<body>
+
+    <input placeholder="Name" class="js-name" onkeydown="submit1(event);">
+
+    <button onclick="submit();" class="js-submit">Submit</button>
+
+<p class="js-display"></p>
+
+
+    <script>
+let inputname=document.querySelector('.js-name');
+
+let name=inputname.value;
+ console.log(name);
+ 
+ function submit(){
+    document.querySelector('.js-display').innerHTML=`Your name is:${name}`;
+ }
+ function submit1(event){
+    if(event.key==='Enter'){
+    document.querySelector('.js-display').innerHTML=`Your name is:${name}`;
+ }
+}
+    </script>
+</body>
+</html>
